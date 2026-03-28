@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&family=Montserrat:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 10%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 53%;
+    --accent: 43 38% 58%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 88%;
+    --input: 0 0% 88%;
+    --ring: 43 38% 58%;
+    --radius: 0.5rem;
+    
+    /* Custom colors */
+    --gold: #c9a962;
+    --gold-light: #d9c98a;
+    --black: #1a1a1a;
+    --white: #ffffff;
+    --gray-soft: #f5f5f5;
+    --gray-medium: #888888;
+    --gray-light: #e0e0e0;
+    
+    /* Animation easings */
+    --ease-dramatic: cubic-bezier(0.87, 0, 0.13, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+    --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-expo-in: cubic-bezier(0.7, 0, 0.84, 0);
+    --ease-elastic: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-white text-[#1a1a1a] antialiased;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+  }
+}
+
+@layer components {
+  .font-heading {
+    font-family: 'Cormorant Garamond', serif;
+  }
+  
+  .font-body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  .font-nav {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  .text-gold {
+    color: var(--gold);
+  }
+  
+  .bg-gold {
+    background-color: var(--gold);
+  }
+  
+  .border-gold {
+    border-color: var(--gold);
+  }
+  
+  /* Label style */
+  .label-text {
+    @apply font-nav text-xs uppercase tracking-[0.3em] text-gold;
+  }
+  
+  /* Navigation link style */
+  .nav-link {
+    @apply font-nav text-[13px] uppercase tracking-[0.15em] text-[#1a1a1a] relative;
+  }
+  
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-[1px] bg-gold transition-all duration-300;
+    transition-timing-function: var(--ease-expo-out);
+  }
+  
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+  
+  /* Button styles */
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-8 py-4 font-nav text-xs uppercase tracking-[0.15em] bg-[#1a1a1a] text-white transition-all duration-300;
+  }
+  
+  .btn-primary:hover {
+    @apply bg-gold;
+    transform: translateY(-2px);
+  }
+  
+  .btn-outline {
+    @apply inline-flex items-center justify-center px-8 py-4 font-nav text-xs uppercase tracking-[0.15em] border border-[#1a1a1a] text-[#1a1a1a] transition-all duration-300;
+  }
+  
+  .btn-outline:hover {
+    @apply bg-[#1a1a1a] text-white;
+    transform: translateY(-2px);
+  }
+  
+  /* Card hover effect */
+  .card-hover {
+    @apply transition-all duration-500;
+    transition-timing-function: var(--ease-smooth);
+  }
+  
+  .card-hover:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  
+  /* Image hover */
+  .img-hover {
+    @apply transition-all duration-500;
+    transition-timing-function: var(--ease-smooth);
+  }
+  
+  .img-hover:hover {
+    transform: scale(1.03);
+    filter: brightness(1.05);
+  }
+  
+  /* Decorative line */
+  .deco-line {
+    @apply h-[1px] bg-gold;
+  }
+  
+  /* Section padding */
+  .section-padding {
+    @apply py-20 md:py-32;
+  }
+  
+  /* Container */
+  .container-custom {
+    @apply w-full px-6 md:px-12 lg:px-20 xl:px-32 mx-auto;
+  }
+}
+
+@layer utilities {
+  /* Animation utilities */
+  .animate-fade-up {
+    animation: fadeUp 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-fade-in {
+    animation: fadeIn 0.6s var(--ease-smooth) forwards;
+  }
+  
+  .animate-slide-left {
+    animation: slideLeft 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  .animate-slide-right {
+    animation: slideRight 0.6s var(--ease-expo-out) forwards;
+  }
+  
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Breathing animation */
+  .animate-breathe {
+    animation: breathe 10s ease-in-out infinite;
+  }
+  
+  /* 3D perspective */
+  .perspective-1200 {
+    perspective: 1200px;
+  }
+  
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+}
+
+/* Keyframes */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(2deg);
+  }
+}
+
+@keyframes breathe {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes drawLine {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes countUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c9a962;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b89952;
+}
