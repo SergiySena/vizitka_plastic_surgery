@@ -19,16 +19,16 @@ const cases = [
     procedure: 'Подтяжка лица',
     age: '52 года',
     recovery: '3 недели',
-    beforeImage: '/before-photo.jpg',
-    afterImage: '/after-photo.jpg',
+    beforeImage: '/before-photo-1.jpg',
+    afterImage: '/after-photo-1.jpg',
   },
   {
     id: 3,
     procedure: 'Ринопластика',
     age: '28 лет',
     recovery: '10 дней',
-    beforeImage: '/before-photo.jpg',
-    afterImage: '/after-photo.jpg',
+    beforeImage: '/before-photo-2.jpg',
+    afterImage: '/after-photo-2.jpg',
   },
 ];
 

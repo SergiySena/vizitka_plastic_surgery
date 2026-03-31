@@ -186,15 +186,15 @@ export default function Hero() {
             </span>
 
             {/* Title */}
-            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-[#1a1a1a] leading-[0.95] mb-8">
+            <h1 className="font-heading text-5xl sm:text-6xl md:text-7xl lg:text-7xl text-[#1a1a1a] leading-[0.95] mb-8">
               <span ref={addToTitleRefs} className="block">
                 Доктор
               </span>
               <span ref={addToTitleRefs} className="block text-gold">
-                Александра
+                Александр
               </span>
               <span ref={addToTitleRefs} className="block">
-                Волкова
+                Корниенко
               </span>
             </h1>
 
@@ -244,7 +244,7 @@ export default function Hero() {
               }}
             >
               <img
-                src="/hero-portrait.jpg"
+                src="/hero-portrait.png"
                 alt="Доктор Александра Волкова"
                 className="w-full h-full object-cover"
               />
@@ -263,7 +263,7 @@ export default function Hero() {
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
         <span className="font-nav text-[10px] uppercase tracking-[0.2em] text-[#888888]">
-          Scroll
+          Эстетическая Хирургия
         </span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent" />
       </div>

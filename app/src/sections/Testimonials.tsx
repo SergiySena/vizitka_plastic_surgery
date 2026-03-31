@@ -40,6 +40,7 @@ const testimonials = [
   },
 ];
 
+
 export default function Testimonials() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
